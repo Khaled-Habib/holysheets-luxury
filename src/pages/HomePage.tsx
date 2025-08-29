@@ -112,7 +112,7 @@ const HomePage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <Link to="/shop" className="btn-primary group inline-flex items-center justify-center">
+            <Link to="/shop" className="btn-gold group inline-flex items-center justify-center">
               <span>View All Products</span>
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
