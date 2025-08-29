@@ -46,60 +46,60 @@ const ProductCard: React.FC<ProductCardProps> = ({
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           />
           
-          {/* Overlay with actions */}
+          {/* Overlay with actions - Mobile optimized */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: isHovered ? 1 : 0 }}
-            className="absolute inset-0 bg-black/20 flex items-center justify-center"
+            className="absolute inset-0 bg-black/20 flex items-center justify-center md:group-hover:flex"
           >
-            <div className="flex space-x-2">
-              <button className="w-10 h-10 bg-white rounded-full flex items-center justify-center hover:bg-luxury-900 hover:text-white transition-colors duration-200">
-                <Eye className="w-4 h-4" />
+            <div className="flex space-x-2 p-2">
+              <button className="w-12 h-12 md:w-10 md:h-10 bg-white rounded-full flex items-center justify-center hover:bg-luxury-900 hover:text-white transition-colors duration-200 shadow-lg">
+                <Eye className="w-5 h-5 md:w-4 md:h-4" />
               </button>
               <button 
-                className={`w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-200 ${
+                className={`w-12 h-12 md:w-10 md:h-10 rounded-full flex items-center justify-center transition-colors duration-200 shadow-lg ${
                   isWishlisted 
                     ? 'bg-red-500 text-white' 
                     : 'bg-white hover:bg-luxury-900 hover:text-white'
                 }`}
                 onClick={() => setIsWishlisted(!isWishlisted)}
               >
-                <Heart className={`w-4 h-4 ${isWishlisted ? 'fill-current' : ''}`} />
+                <Heart className={`w-5 h-5 md:w-4 md:h-4 ${isWishlisted ? 'fill-current' : ''}`} />
               </button>
-              <button className="w-10 h-10 bg-gold-500 text-white rounded-full flex items-center justify-center hover:bg-gold-600 transition-colors duration-200">
-                <ShoppingBag className="w-4 h-4" />
+              <button className="w-12 h-12 md:w-10 md:h-10 bg-gold-500 text-white rounded-full flex items-center justify-center hover:bg-gold-600 transition-colors duration-200 shadow-lg">
+                <ShoppingBag className="w-5 h-5 md:w-4 md:h-4" />
               </button>
             </div>
           </motion.div>
 
           {/* Discount badge */}
           {discount > 0 && (
-            <div className="absolute top-4 left-4 bg-red-500 text-white text-xs font-medium px-2 py-1">
+            <div className="absolute top-2 left-2 md:top-4 md:left-4 bg-red-500 text-white text-xs font-medium px-2 py-1 rounded">
               -{discount}%
             </div>
           )}
 
           {/* Category badge */}
-          <div className="absolute top-4 right-4 bg-white/90 text-luxury-900 text-xs font-medium px-2 py-1">
+          <div className="absolute top-2 right-2 md:top-4 md:right-4 bg-white/90 text-luxury-900 text-xs font-medium px-2 py-1 rounded">
             {category}
           </div>
         </div>
 
         {/* Product Info */}
-        <div className="p-4">
+        <div className="p-3 md:p-4">
           <Link to={`/product/${id}`} className="block">
-            <h3 className="font-medium text-luxury-900 mb-2 group-hover:text-gold-600 transition-colors duration-200">
+            <h3 className="font-medium text-luxury-900 mb-2 group-hover:text-gold-600 transition-colors duration-200 text-sm md:text-base line-clamp-2">
               {name}
             </h3>
           </Link>
           
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <span className="text-lg font-semibold text-luxury-900">
+              <span className="text-base md:text-lg font-semibold text-luxury-900">
                 ${price}
               </span>
               {originalPrice && (
-                <span className="text-sm text-luxury-400 line-through">
+                <span className="text-xs md:text-sm text-luxury-400 line-through">
                   ${originalPrice}
                 </span>
               )}
@@ -108,16 +108,16 @@ const ProductCard: React.FC<ProductCardProps> = ({
             {/* Color options */}
             {colors.length > 0 && (
               <div className="flex space-x-1">
-                {colors.slice(0, 4).map((color, index) => (
+                {colors.slice(0, 3).map((color, index) => (
                   <div
                     key={index}
-                    className="w-4 h-4 rounded-full border border-luxury-200"
+                    className="w-3 h-3 md:w-4 md:h-4 rounded-full border border-luxury-200"
                     style={{ backgroundColor: color }}
                   ></div>
                 ))}
-                {colors.length > 4 && (
-                  <div className="w-4 h-4 rounded-full border border-luxury-200 bg-luxury-100 text-xs flex items-center justify-center">
-                    +{colors.length - 4}
+                {colors.length > 3 && (
+                  <div className="w-3 h-3 md:w-4 md:h-4 rounded-full border border-luxury-200 bg-luxury-100 text-xs flex items-center justify-center">
+                    +{colors.length - 3}
                   </div>
                 )}
               </div>

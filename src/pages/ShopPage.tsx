@@ -104,26 +104,26 @@ const ShopPage: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-8 md:mb-12"
         >
-          <h1 className="text-4xl md:text-5xl font-display font-light mb-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-light mb-4 md:mb-6">
             Shop Our
             <span className="block text-gradient font-semibold">Collections</span>
           </h1>
-          <p className="text-xl text-luxury-600 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-luxury-600 max-w-3xl mx-auto px-4">
             Discover our complete range of luxury bamboo bed sheets, pillows, and sleep accessories.
           </p>
         </motion.div>
 
         {/* Filters and Controls */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-8 gap-4">
+        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 md:mb-8 gap-4">
           {/* Category Filters */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 w-full lg:w-auto">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id)}
-                className={`px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                className={`px-3 py-2 md:px-4 md:py-2 text-sm font-medium transition-colors duration-200 rounded-md ${
                   selectedCategory === category.id
                     ? 'bg-luxury-900 text-white'
                     : 'bg-white text-luxury-700 hover:bg-luxury-100 luxury-border'
@@ -135,10 +135,10 @@ const ShopPage: React.FC = () => {
           </div>
 
           {/* View Mode Toggle */}
-          <div className="flex items-center space-x-2 bg-white luxury-border p-1">
+          <div className="flex items-center space-x-2 bg-white luxury-border p-1 rounded-md">
             <button
               onClick={() => setViewMode('grid')}
-              className={`p-2 transition-colors duration-200 ${
+              className={`p-2 transition-colors duration-200 rounded ${
                 viewMode === 'grid' ? 'bg-luxury-900 text-white' : 'text-luxury-700 hover:bg-luxury-100'
               }`}
             >
@@ -146,7 +146,7 @@ const ShopPage: React.FC = () => {
             </button>
             <button
               onClick={() => setViewMode('list')}
-              className={`p-2 transition-colors duration-200 ${
+              className={`p-2 transition-colors duration-200 rounded ${
                 viewMode === 'list' ? 'bg-luxury-900 text-white' : 'text-luxury-700 hover:bg-luxury-100'
               }`}
             >
@@ -156,9 +156,9 @@ const ShopPage: React.FC = () => {
         </div>
 
         {/* Products Grid */}
-        <div className={`grid gap-8 ${
+        <div className={`grid gap-4 md:gap-6 lg:gap-8 ${
           viewMode === 'grid' 
-            ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' 
+            ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' 
             : 'grid-cols-1'
         }`}>
           {filteredProducts.map((product, index) => (
