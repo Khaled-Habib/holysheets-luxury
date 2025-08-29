@@ -112,8 +112,8 @@ const HomePage: React.FC = () => {
             viewport={{ once: true }}
             className="text-center mt-12"
           >
-            <Link to="/shop" className="btn-primary group">
-              View All Products
+            <Link to="/shop" className="btn-primary group inline-flex items-center justify-center">
+              <span>View All Products</span>
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
           </motion.div>
@@ -188,10 +188,10 @@ const HomePage: React.FC = () => {
               Experience the difference that premium bamboo bed sheets can make in your sleep quality.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/shop" className="btn-gold">
+              <Link to="/shop" className="btn-gold inline-flex items-center justify-center">
                 Shop Now
               </Link>
-              <Link to="/about" className="btn-secondary border-white text-white hover:bg-white hover:text-luxury-900">
+              <Link to="/about" className="btn-secondary border-white text-white hover:bg-white hover:text-luxury-900 inline-flex items-center justify-center">
                 Learn More
               </Link>
             </div>

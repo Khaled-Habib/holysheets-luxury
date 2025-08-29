@@ -36,12 +36,12 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link to="/shop" className="btn-gold group">
-              Shop Collection
+            <Link to="/shop" className="btn-gold group inline-flex items-center justify-center">
+              <span>Shop Collection</span>
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
             
-            <Link to="/about" className="btn-secondary border-white text-white hover:bg-white hover:text-luxury-900">
+            <Link to="/about" className="btn-secondary border-white text-white hover:bg-white hover:text-luxury-900 inline-flex items-center justify-center">
               Learn More
             </Link>
           </div>
